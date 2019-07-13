@@ -1,8 +1,10 @@
 ---
 - name: Hello World!
   hosts: all
+  vars:
+    name: chris
  
   tasks:
  
   - name: Hello World!
-    shell: echo "Hi! Chris' Tower is working."
+    shell: echo "Hi! {{ name }} Tower is working."
