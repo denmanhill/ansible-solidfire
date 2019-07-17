@@ -13,7 +13,7 @@
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
       state: present
-      name: {{ volname }}
+      name: "{{ volname }}"
       qos: {minIOPS: 1000, maxIOPS: 20000, burstIOPS: 50000}
       account_id: "{{ accountid }}"
       enable512e: True
