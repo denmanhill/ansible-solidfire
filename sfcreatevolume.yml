@@ -1,17 +1,17 @@
 ---
 - name: Solidfire Test
-  hosts: all
+  hosts: localhost
   
   tasks:
-- name: Create Volume
-  na_elementsw_volume:
-    hostname: "192.168.2.20"
-    username: "administrator"
-    password: "TiffanyDenman2010"
-    state: present
-    name: AnsibleVol
-    qos: {minIOPS: 1000, maxIOPS: 20000, burstIOPS: 50000}
-    account_id: 1
-    enable512e: True
-    size: 2
-    size_unit: gb
+  - name: Create Volume
+    na_elementsw_volume:
+      hostname: "192.168.2.20"
+      username: "administrator"
+      password: "TiffanyDenman2010"
+      state: present
+      name: AnsibleVol
+      qos: {minIOPS: 1000, maxIOPS: 20000, burstIOPS: 50000}
+      account_id: 1
+      enable512e: True
+      size: 2
+      size_unit: gb
