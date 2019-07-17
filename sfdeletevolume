@@ -1,0 +1,16 @@
+---
+- name: Solidfire Delete Volume
+  hosts: localhost
+  vars:
+    volname: default
+    accountid: 1
+    
+  tasks:
+  - name: Create Volume
+    na_elementsw_volume:
+      hostname: "192.168.2.20"
+      username: "{{ SF_USERNAME }}"
+      password: "{{ SF_PASSWORD }}"
+      state: absent
+      name: "{{ volname }}"
+      account_id: "{{ accountid }}"
