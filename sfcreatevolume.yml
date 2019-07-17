@@ -1,4 +1,9 @@
- name: Create Volume
+---
+- name: Solidfire Test
+  hosts: all
+  
+  tasks:
+- name: Create Volume
   na_elementsw_volume:
     hostname: "192.168.2.20"
     username: "administrator"
