@@ -1,6 +1,6 @@
 ---
 - name: Solidfire Create and Present Volume
-  hosts: Solidfire Clusters
+  hosts: SolidfireClusters
   connection: local
   vars:
     volname: default
