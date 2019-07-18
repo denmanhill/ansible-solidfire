@@ -29,4 +29,4 @@
       password: "{{ SF_PASSWORD }}"
       src_access_group_id: "{{ accessgroupname }}"
       state: present
-      volumes: "{{ volname }}"
+      volumes: [17]
