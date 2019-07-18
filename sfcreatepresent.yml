@@ -16,7 +16,9 @@
       enable512e: True
       size: "{{ volsize }}"
       size_unit: gb
-
+  - pause:
+      seconds: 10
+      
 - hosts: SOLIDFIRE01
   connection: local
   vars:
@@ -29,4 +31,4 @@
       password: "{{ SF_PASSWORD }}"
       src_access_group_id: "{{ accessgroupname }}"
       state: present
-      volumes: [17]
+      volumes: "{{ volname }}"
