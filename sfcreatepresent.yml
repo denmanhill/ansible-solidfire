@@ -31,6 +31,6 @@
       hostname: "{{ inventory_hostname }}"
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
-      new_name: "{{ accessgroupname }}"
+      src_access_group_id: "{{ accessgroupname }}"
       state: present
       volumes: "{{ volname }}"
