@@ -9,7 +9,7 @@
   tasks:
   - name: Delete Volume
     na_elementsw_volume:
-      hostname: "192.168.2.20"
+      hostname: "{{ inventory_hostname }}"
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
       state: absent
