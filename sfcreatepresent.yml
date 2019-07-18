@@ -2,8 +2,6 @@
 - hosts: SOLIDFIRE01
   connection: local
   vars:
-    volname: default
-    volsize: 2
     accountid: 1
   tasks:
   - name: Create Volume
@@ -22,8 +20,6 @@
 - hosts: SOLIDFIRE01
   connection: local
   vars:
-    volname: default
-    volsize: 2
     accountid: 1
   tasks:
   - name: Present Volume
