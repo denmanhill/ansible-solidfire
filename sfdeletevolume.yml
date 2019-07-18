@@ -1,6 +1,7 @@
 ---
 - name: Solidfire Delete Volume
   hosts: localhost
+  connection: local
   vars:
     volname: default
     accountid: 1
