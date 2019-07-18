@@ -6,7 +6,7 @@
     accountid: 1
     
   tasks:
-  - name: Create Volume
+  - name: Delete Volume
     na_elementsw_volume:
       hostname: "192.168.2.20"
       username: "{{ SF_USERNAME }}"
