@@ -1,5 +1,5 @@
 ---
-- hosts: SolidfireClusters
+- hosts: SOLIDFIRE01
   connection: local
   vars:
     volname: default
