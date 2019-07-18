@@ -1,6 +1,7 @@
 ---
 - name: Solidfire Create Volume
   hosts: localhost
+  connection: local
   vars:
     volname: default
     volsize: 2
