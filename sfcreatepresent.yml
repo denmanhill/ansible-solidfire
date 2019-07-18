@@ -1,0 +1,32 @@
+---
+- name: Solidfire Create and Present Volume
+  hosts: localhost
+  connection: local
+  vars:
+    volname: default
+    volsize: 2
+    accountid: 1
+    
+  tasks:
+  - name: Create Volume
+    na_elementsw_volume:
+      hostname: "{{ inventory_hostname }}"
+      username: "{{ SF_USERNAME }}"
+      password: "{{ SF_PASSWORD }}"
+      state: present
+      name: "{{ volname }}"
+      qos: {minIOPS: 1000, maxIOPS: 20000, burstIOPS: 50000}
+      account_id: "{{ accountid }}"
+      enable512e: True
+      size: "{{ volsize }}"
+      size_unit: gb
+      
+  - name: Modify Access Group
+    na_elementsw_access_group:
+      hostname: "{{ inventory_hostname }}"
+      username: "{{ SF_USERNAME }}"
+      password: "{{ SF_PASSWORD }}"
+      state: present
+      name: "{{ accessgroupname }}"
+      account_id: 1
+      attributes: {"volumes": "{{ volname }}"}
