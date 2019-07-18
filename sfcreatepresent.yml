@@ -19,16 +19,16 @@
       size: "{{ volsize }}"
       size_unit: gb
  
- - hosts: SolidfireClusters
-   connection: local
-   vars:
-     accountid: 1     
-   tasks:
-     na_elementsw_access_group:
-       hostname: "{{ inventory_hostname }}"
-       username: "{{ SF_USERNAME }}"
-       password: "{{ SF_PASSWORD }}"
-       state: present
-       name: "{{ accessgroupname }}"
-       account_id: 1
-       attributes: {"volumes": "{{ volname }}"}
+- hosts: SolidfireClusters
+  connection: local
+  vars:
+    accountid: 1     
+  tasks:
+    na_elementsw_access_group:
+      hostname: "{{ inventory_hostname }}"
+      username: "{{ SF_USERNAME }}"
+      password: "{{ SF_PASSWORD }}"
+      state: present
+      name: "{{ accessgroupname }}"
+      account_id: 1
+      attributes: {"volumes": "{{ volname }}"}
