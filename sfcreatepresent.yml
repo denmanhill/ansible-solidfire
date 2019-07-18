@@ -33,4 +33,4 @@
       password: "{{ SF_PASSWORD }}"
       new_name: "{{ accessgroupname }}"
       state: present
-      attributes: {"volumes": "{{ volname }}"}
+      volumes: "{{ volname }}"
