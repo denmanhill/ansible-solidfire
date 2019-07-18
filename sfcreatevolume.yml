@@ -1,5 +1,5 @@
 ---
-- name: Solidfire Test
+- name: Solidfire Create Volume
   hosts: localhost
   vars:
     volname: default
