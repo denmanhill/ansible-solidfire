@@ -25,7 +25,6 @@
       hostname: "{{ inventory_hostname }}"
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
-      account_id: 1
       src_access_group_id: "{{ accessgroupname }}"
       state: present
       volumes: ["{{ volname }}"]
