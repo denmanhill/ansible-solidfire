@@ -15,7 +15,7 @@
       size: "{{ volsize }}"
       size_unit: gb
   - pause:
-      seconds: 10
+      seconds: 2
       
 - hosts: SOLIDFIRE01
   connection: local
