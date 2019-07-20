@@ -15,9 +15,11 @@
       size: "{{ volsize }}"
       size_unit: gb
     register: testout
+  
   - name: Write debug
     debug:
       msg: "{{ testout }}"
+  
   - pause:
       seconds: 2
       
