@@ -35,7 +35,7 @@
       state: present
       volumes: ["{{ volname }}"]
 
-- hosts: Hosts
+- hosts: ESXiHosts
   connection: local
   tasks:
   - name: Rescan Host Storage
