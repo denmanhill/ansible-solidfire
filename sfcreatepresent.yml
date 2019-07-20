@@ -1,5 +1,5 @@
 ---
-- hosts: SOLIDFIRE01
+- hosts: SolidfireNodes
   connection: local
   tasks:
   - name: Create Volume
@@ -23,7 +23,7 @@
   - pause:
       seconds: 2
       
-- hosts: SOLIDFIRE01
+- hosts: SolidfireNodes
   connection: local
   tasks:
   - name: Present Volume
@@ -34,3 +34,14 @@
       src_access_group_id: "{{ accessgroupname }}"
       state: present
       volumes: ["{{ volname }}"]
+
+- hosts: Hosts
+  connection: local
+  tasks:
+  - name: Rescan Host Storage
+    vmware_host_scanhba:
+      hostname: "{{ vcenter_hostname }}"
+      username: "{{ VCC_USERNAME }}"
+      password: "{{ VCC_PASSWORD }}"
+      cluster_name: "{{ accessgroupname }}"
+      validate_certs: false
