@@ -16,7 +16,7 @@
       size: "{{ volsize }}"
       size_unit: gb
     register: testout
-  
+    set_fact:fact_for_SolidfireNodes="{{ testout.msg }}"
   - name: Write debug
     debug:
       msg: "{{ testout.msg }}"
@@ -61,7 +61,7 @@
       password: "{{ VCC_PASSWORD }}"
       esxi_hostname: "{{ inventory_hostname }}"
       datastore_name: "{{ volname }}"
-      vmfs_device_name: "{{ testout.msg }}"
+      vmfs_device_name: "{{ hostvars['SolidfireNodes']['fact_for_SolidfireNodes'] }}"
       vmfs_version: 6
       state: present
       validate_certs: false
