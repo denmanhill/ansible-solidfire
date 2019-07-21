@@ -7,7 +7,7 @@
       hostname: "{{ inventory_hostname }}"
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
-      name: "{{ accessgroupname }}"
+      name: "CLUSTER01"
       account_id: 1
       state: present
-      volumes: ["{{ volname }}"]
+      volumes: "SF-VOL01"
