@@ -10,4 +10,4 @@
       name: "TESTACCESSGROUP"
       account_id: 2
       state: present
-      volumes: "SF-VOL01"
+      volumes: [1]
