@@ -59,7 +59,7 @@
 
   - name: Write debug
     debug:
-      naa: hostvars['SolidfireNodes']['fact_for_SolidfireNodes']
+      naa: hostvars[groups['SolidfireNodes'][0]['fact_for_SolidfireNodes']
   - name: Create datastore
     vmware_host_datastore:
       hostname: "{{ vcenter_hostname }}"
