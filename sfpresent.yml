@@ -11,3 +11,8 @@
       account_id: "2"
       state: present
       volumes: [1]
+    register: testout
+    
+  - name: Write debug
+    debug:
+      msg: "{{ testout }}"
