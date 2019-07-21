@@ -18,7 +18,7 @@
   
   - name: Write debug
     debug:
-      msg: "{{ testout }}"
+      msg: "{{ testout.msg }}"
   
   - pause:
       seconds: 2
