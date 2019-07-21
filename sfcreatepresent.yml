@@ -16,7 +16,8 @@
       size: "{{ volsize }}"
       size_unit: gb
     register: testout
-    set_fact:fact_for_SolidfireNodes="{{ testout.msg }}"
+    set_fact: fact_for_SolidfireNodes="{{ testout.msg }}"
+    
   - name: Write debug
     debug:
       msg: "{{ testout.msg }}"
