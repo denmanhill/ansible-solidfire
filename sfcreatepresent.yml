@@ -49,3 +49,19 @@
       password: "{{ VCC_PASSWORD }}"
       cluster_name: "{{ accessgroupname }}"
       validate_certs: false
+
+- hosts: ESXiHosts[0]
+  gather_facts: no
+  connection: local
+  tasks:
+  - name: Create datastore
+    vmware_host_datastore:
+      hostname: "{{ vcenter_hostname }}"
+      username: "{{ VCC_USERNAME }}"
+      password: "{{ VCC_PASSWORD }}"
+      esxi_hostname: "{{ inventory_hostname }}"
+      datastore_name: "{{ volname }}"
+      vmfs_device_name: "{{ testout.msg }}"
+      vmfs_version: 6
+      state: present
+      validate_certs: false
