@@ -7,7 +7,7 @@
       hostname: "{{ inventory_hostname }}"
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
-      src_access_group_id: "{{ accessgroupname }}"
+      name: "{{ accessgroupname }}"
       account_id: 1
       state: present
       volumes: ["{{ volname }}"]
