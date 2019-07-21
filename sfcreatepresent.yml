@@ -63,7 +63,7 @@
       password: "{{ VCC_PASSWORD }}"
       esxi_hostname: "{{ inventory_hostname }}"
       datastore_name: "{{ volname }}"
-      vmfs_device_name: "{{ hostvars['SolidfireNodes']['fact_for_SolidfireNodes'] }}"
+      vmfs_device_name: "{{ hostvars['SolidfireNodes'][0]['fact_for_SolidfireNodes'] }}"
       vmfs_version: 6
       state: present
       validate_certs: false
