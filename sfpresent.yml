@@ -8,6 +8,6 @@
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
       name: "TESTACCESSGROUP"
-      account_id: 2
+      account_id: "2"
       state: present
       volumes: [1]
