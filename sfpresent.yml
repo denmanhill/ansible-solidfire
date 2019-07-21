@@ -10,7 +10,7 @@
       name: "TESTACCESSGROUP"
       account_id: "2"
       state: present
-      volumes: [1]
+      volumes: [SF-VOL01]
     register: testout
     
   - name: Write debug
