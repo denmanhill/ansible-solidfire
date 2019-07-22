@@ -6,7 +6,7 @@
       fact_for_SolidfireNodes: "NAA1"
   - name: First write debug
     debug:
-      naa: hostvars[groups['SolidfireNodes'][0]]['fact_for_SolidfireNodes'] 
+      naa: hostvars['SolidfireNodes']
 
 - hosts: ESXiHosts[0]
   connection: local
