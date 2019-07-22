@@ -2,8 +2,8 @@
 - hosts: SolidfireNodes[0]
   connection: local
   tasks:
-  - command: /bin/echo "this is a test"
-    register: foo
+  - set_fact:
+    naa: naaaaaaaaaa
 
 - hosts: ESXiHosts[0]
   connection: local
@@ -11,4 +11,4 @@
 
   - name: Second Write debug
     debug:
-      var=hostvars[groups['SolidfireNodes'][0]]['foo']
+      var=hostvars[groups['SolidfireNodes'][0]]['naa']
