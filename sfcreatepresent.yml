@@ -67,7 +67,7 @@
       password: "{{ VCC_PASSWORD }}"
       esxi_hostname: "{{ inventory_hostname }}"
       datastore_name: "{{ volname }}"
-      datastore_type: VMFS
+      datastore_type: vmfs
       vmfs_device_name: "{{ hostvars[groups['SolidfireNodes'][0]]['NAA'] }}"
       vmfs_version: 6
       state: present
