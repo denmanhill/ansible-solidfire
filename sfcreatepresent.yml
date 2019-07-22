@@ -22,9 +22,6 @@
   - name: Write debug
     debug:
       msg: "{{ NAA }}"
-  
-  - pause:
-      seconds: 2
       
 - hosts: SolidfireNodes
   gather_facts: no
@@ -56,8 +53,7 @@
   gather_facts: no
   connection: local
   tasks:
-
-  - name: Write debug
+  - name: Write NAA testing
     debug:
       msg: "{{ hostvars[groups['SolidfireNodes'][0]]['NAA'] }}"
   - name: Create datastore
