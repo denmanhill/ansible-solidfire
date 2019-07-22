@@ -17,7 +17,7 @@
       size_unit: gb
     register: testout
   - set_fact: 
-      NAA: naa"{{ testout.msg }}"
+      NAA: "{{ naa + testout.msg }}"
     
   - name: Write debug
     debug:
