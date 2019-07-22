@@ -1,13 +1,11 @@
 ---
 - hosts: SolidfireNodes[0]
-  gather_facts: no
   connection: local
   tasks:
   - set_fact: 
       fact_for_SolidfireNodes: "NAA1"
       
 - hosts: ESXiHosts[0]
-  gather_facts: no
   connection: local
   tasks:
 
