@@ -1,9 +1,8 @@
 ---
 - hosts: SolidfireNodes[0]
   connection: local
-  tasks:
   - set_fact:
-    naa: naaaaaaaaaa
+      naa: naaaaaaaaaa
 
 - hosts: ESXiHosts[0]
   connection: local
