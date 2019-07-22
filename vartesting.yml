@@ -6,7 +6,7 @@
       fact_for_SolidfireNodes: "NAA1"
   - name: First write debug
     debug:
-      msg: hostvars['SolidfireNodes']['fact_for_SolidfireNodes']
+      var=hostvars['SolidfireNodes']['fact_for_SolidfireNodes']
 
 - hosts: ESXiHosts[0]
   connection: local
@@ -14,4 +14,4 @@
 
   - name: Second Write debug
     debug:
-      msg: "{{ hostvars[groups['SolidfireNodes'][0]]['fact_for_SolidfireNodes'] }}"
+      var="{{ hostvars[groups['SolidfireNodes'][0]]['fact_for_SolidfireNodes'] }}"
