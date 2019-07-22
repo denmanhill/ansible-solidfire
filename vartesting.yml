@@ -4,11 +4,14 @@
   tasks:
   - set_fact: 
       fact_for_SolidfireNodes: "NAA1"
-      
+  - name: First write debug
+    debug:
+      naa: "{{ hostvars[groups['SolidfireNodes'][0]]['fact_for_SolidfireNodes'] }}"     
+
 - hosts: ESXiHosts[0]
   connection: local
   tasks:
 
-  - name: Write debug
+  - name: Second Write debug
     debug:
       naa: "{{ hostvars[groups['SolidfireNodes'][0]]['fact_for_SolidfireNodes'] }}"
