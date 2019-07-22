@@ -2,11 +2,8 @@
 - hosts: SolidfireNodes[0]
   connection: local
   tasks:
-  - set_fact: 
-      fact_for_SolidfireNodes: "NAA1"
-  - name: First write debug
-    debug:
-      var=hostvars['SolidfireNodes']['fact_for_SolidfireNodes']
+  - command: /bin/echo "this is a test"
+    register: foo
 
 - hosts: ESXiHosts[0]
   connection: local
@@ -14,4 +11,4 @@
 
   - name: Second Write debug
     debug:
-      var="{{ hostvars[groups['SolidfireNodes'][0]]['fact_for_SolidfireNodes'] }}"
+      var="{{ hostvars[groups['SolidfireNodes'][0]]['foo'] }}"
