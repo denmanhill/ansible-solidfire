@@ -11,4 +11,4 @@
   tasks:
   - name: Second Write debug
     debug:
-      var=hostvars[groups['SolidfireNodes'][0]]['naa']
+      var="{{ hostvars[groups['SolidfireNodes'][0]]['naa'] }}"
