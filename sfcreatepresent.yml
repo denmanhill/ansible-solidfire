@@ -17,11 +17,11 @@
       size_unit: gb
     register: testout
   - set_fact: 
-      fact_for_SolidfireNodes: "{{ testout.msg }}"
+      NAA: naa+"{{ testout.msg }}"
     
   - name: Write debug
     debug:
-      msg: "{{ fact_for_SolidfireNodes }}"
+      msg: "{{ NAA }}"
   
   - pause:
       seconds: 2
@@ -59,7 +59,7 @@
 
   - name: Write debug
     debug:
-      naa: hostvars[groups['SolidfireNodes'][0]['fact_for_SolidfireNodes']
+      msg: "{{ hostvars[groups['SolidfireNodes'][0]]['NAA'] }}"
   - name: Create datastore
     vmware_host_datastore:
       hostname: "{{ vcenter_hostname }}"
@@ -67,7 +67,7 @@
       password: "{{ VCC_PASSWORD }}"
       esxi_hostname: "{{ inventory_hostname }}"
       datastore_name: "{{ volname }}"
-      vmfs_device_name: "{{ hostvars[groups['SolidfireNodes'][0]['fact_for_SolidfireNodes'] }}"
+      vmfs_device_name: "{{ hostvars[groups['SolidfireNodes'][0]]['NAA'] }}"
       vmfs_version: 6
       state: present
       validate_certs: false
