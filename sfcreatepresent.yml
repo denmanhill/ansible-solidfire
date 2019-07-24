@@ -5,7 +5,7 @@
   tasks:
   - name: Create Volume
     na_elementsw_volume:
-      hostname: "{{ inventory_hostname }}"
+      hostname: VCSA
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
       state: present
