@@ -1,0 +1,24 @@
+---
+- hosts: SolidfireNodes
+  gather_facts: no
+  connection: local
+  tasks:
+  - name: Create Volume
+    na_elementsw_volume:
+      hostname: VCSA
+      username: "{{ SF_USERNAME }}"
+      password: "{{ SF_PASSWORD }}"
+      state: present
+      name: "{{ volname }}"
+      qos: {minIOPS: 1000, maxIOPS: 20000, burstIOPS: 50000}
+      account_id: 1
+      enable512e: True
+      size: "{{ volsize }}"
+      size_unit: gb
+    register: testout
+  - set_fact: 
+      NAA: "{{ 'naa.' + testout.msg }}"
+    
+  - name: Write debug
+    debug:
+      msg: "{{ NAA }}"
