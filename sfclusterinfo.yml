@@ -11,8 +11,5 @@
     register: testout
     ignore_errors: yes
   - debug: msg= "{{ testout }}"
-  
-  - set_fact: testout_fromjson="{{ testout | from_json }}"
-  
+ 
   - debug: var=testout
-  - debug: var=testout_fromjson
