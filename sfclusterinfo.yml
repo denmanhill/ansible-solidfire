@@ -13,4 +13,4 @@
   - name: debug cluster capacity
     set_fact: 
       dataresult: "{{ testout.cluster_capacity | from_json }}"
-  - debug: var=dataresult
+  - debug: var=dataresult.active_block_space
