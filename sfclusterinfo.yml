@@ -12,7 +12,7 @@
     ignore_errors: yes
   - debug: msg= "{{ testout }}"
   
-  - set_fact: testout_fromjson="{{ testout.msg | from_json }}"
+  - set_fact: testout_fromjson="{{ testout | from_json }}"
   
   - debug: var=testout
   - debug: var=testout_fromjson
