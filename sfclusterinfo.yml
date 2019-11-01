@@ -10,6 +10,6 @@
       password: "{{ SF_PASSWORD }}"
     register: testout
     ignore_errors: yes
-  - debug: cluster_capacity = "{{ testout }}"
+  - debug: msg = "{{ testout }}"
  
   - debug: var=testout
