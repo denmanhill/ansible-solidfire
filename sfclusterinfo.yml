@@ -1,0 +1,11 @@
+---
+- hosts: SolidfireNodes
+  gather_facts: yes
+  connection: local
+  tasks:
+  - name: Create Volume
+    na_elementsw_cluster_info_custom:
+      hostname: "{{ SF_HOSTNAME }}"
+      username: "{{ SF_USERNAME }}"
+      password: "{{ SF_PASSWORD }}"
+    register: testout
