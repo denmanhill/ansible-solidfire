@@ -10,6 +10,7 @@
       password: "{{ SF_PASSWORD }}"
     register: testout
     ignore_errors: yes
+  - debug: msg= "{{ testout }}"
   
   - set_fact: testout_fromjson="{{ testout.msg | from_json }}"
   
