@@ -21,4 +21,4 @@
     
   - name: Write debug
     debug:
-      msg: "{{ NAA }}"
+      var: testout
