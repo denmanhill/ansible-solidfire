@@ -10,7 +10,6 @@
       password: "{{ SF_PASSWORD }}"
     register: testout
     ignore_errors: yes
-  set_fact: 
-    dataresult: "{{ testout.cluster_capacity | from_json }}"
-   
+    set_fact: 
+      dataresult: "{{ testout.cluster_capacity | from_json }}"
   - debug: var=dataresult
