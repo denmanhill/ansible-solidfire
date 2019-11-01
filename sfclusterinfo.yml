@@ -9,3 +9,6 @@
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
     register: testout
+    ignore_errors: yes
+    
+  - debug: var=testout
