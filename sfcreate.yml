@@ -1,6 +1,6 @@
 ---
 - hosts: SolidfireNodes
-  gather_facts: no
+  gather_facts: yes
   connection: local
   tasks:
   - name: Create Volume
