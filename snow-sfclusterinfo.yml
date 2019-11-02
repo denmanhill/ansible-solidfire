@@ -28,4 +28,4 @@
         u_sfmaxblockcapacity: "{{ dataresult.max_used_space }}"
         u_sfusedspace: "{{ dataresult.used_space }}"
         u_sfavailablespace: "{{ dataresult.max_used_space - dataresult.used_space }}"
-      ignore_errors: yes  
+    ignore_errors: yes  
