@@ -25,4 +25,7 @@
       number: "{{ snow_request }}"
       data:
         work_notes: "Prechecks run"
-    ignore_errors: yes  
+        u_sfmaxblockcapacity: "{{ dataresult.max_used_space }}"
+        u_sfusedspace: "{{ dataresult.used_space }}"
+        u_sfavailablespace: "{{ dataresult.max_used_space - dataresult.used_space }}"
+      ignore_errors: yes  
