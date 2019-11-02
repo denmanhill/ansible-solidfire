@@ -5,7 +5,7 @@
   tasks:
   - name: Create Volume
     na_elementsw_volume:
-      hostname: "{{ SF_HOSTNAME }}"
+      hostname: "{{ sfclustername }}"
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
       state: present
@@ -19,6 +19,14 @@
   - set_fact: 
       NAA: "{{ 'naa.' + testout.msg }}"
     
-  - name: Write debug
-    debug:
-      var: testout
+  - name: update servicenow request
+    snow_record:
+      username: "{{ snow_user }}"
+      password: "{{ snow_password }}"
+      instance: "{{ snow_instance }}"
+      state: present
+      table: u_chrissfvolrequest
+      number: "{{ snow_request }}"
+      data:
+        work_notes: "Playbook completed"
+    ignore_errors: yes
