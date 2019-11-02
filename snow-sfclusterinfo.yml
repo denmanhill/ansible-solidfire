@@ -1,0 +1,16 @@
+---
+- hosts: SolidfireNodes
+  gather_facts: no
+  connection: local
+  tasks:
+  - name: Collect facts
+    na_elementsw_cluster_info_custom:
+      hostname: "{{ sfclustername }}"
+      username: "{{ SF_USERNAME }}"
+      password: "{{ SF_PASSWORD }}"
+    register: testout
+    ignore_errors: yes
+  - name: debug cluster capacity
+    set_fact: 
+      dataresult: "{{ testout.cluster_capacity | from_json }}"
+  - debug: var=dataresult.active_block_space
