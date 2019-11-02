@@ -9,11 +9,11 @@
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
       state: present
-      name: "{{ volname }}"
+      name: "{{ sfvolname }}"
       qos: {minIOPS: 1000, maxIOPS: 20000, burstIOPS: 50000}
       account_id: 1
       enable512e: True
-      size: "{{ volsize }}"
+      size: "{{ sfvolsize }}"
       size_unit: gb
     register: testout
   - set_fact: 
