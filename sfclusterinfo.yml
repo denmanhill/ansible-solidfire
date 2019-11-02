@@ -5,7 +5,7 @@
   tasks:
   - name: Collect facts
     na_elementsw_cluster_info_custom:
-      hostname: "{{ SF_HOSTNAME }}"
+      hostname: "{{ sfclustername }}"
       username: "{{ SF_USERNAME }}"
       password: "{{ SF_PASSWORD }}"
     register: testout
