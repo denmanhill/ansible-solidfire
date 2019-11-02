@@ -14,3 +14,15 @@
     set_fact: 
       dataresult: "{{ testout.cluster_capacity | from_json }}"
   - debug: var=dataresult.active_block_space
+
+  - name: update servicenow request
+    snow_record:
+      username: "{{ snow_user }}"
+      password: "{{ snow_password }}"
+      instance: "{{ snow_instance }}"
+      state: present
+      table: u_chrissfvolrequest
+      number: "{{ snow_request }}"
+      data:
+        work_notes: "Prechecks run"
+    ignore_errors: yes  
