@@ -3,6 +3,17 @@
   gather_facts: no
   connection: local
   tasks:
+  - name: update servicenow request
+    snow_record:
+      username: "{{ snow_user }}"
+      password: "{{ snow_password }}"
+      instance: "{{ snow_instance }}"
+      state: present
+      table: u_chrissfvolrequest
+      number: "{{ snow_request }}"
+      data:
+        work_notes: "Started playbook - snow-sfclusterinfo"
+    ignore_errors: yes  
   - name: Collect facts
     na_elementsw_cluster_info_custom:
       hostname: "{{ sfclustername }}"
@@ -24,7 +35,7 @@
       table: u_chrissfvolrequest
       number: "{{ snow_request }}"
       data:
-        work_notes: "Prechecks run"
+        work_notes: "Prechecks run. Completed playbook - snow-sfclusterinfo"
         u_sfmaxblockcapacity: "{{ dataresult.max_used_space }}"
         u_sfusedspace: "{{ dataresult.used_space }}"
         u_sfavailablespace: "{{ dataresult.max_used_space - dataresult.used_space }}"
