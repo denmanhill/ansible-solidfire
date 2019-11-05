@@ -41,4 +41,5 @@
       number: "{{ snow_request }}"
       data:
         work_notes: "Volume created. Completed playbook - snow-sfcreate"
+        state: 3
     ignore_errors: yes
