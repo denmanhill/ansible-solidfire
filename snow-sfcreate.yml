@@ -3,6 +3,18 @@
   gather_facts: no
   connection: local
   tasks:
+  - name: update servicenow request
+    snow_record:
+      username: "{{ snow_user }}"
+      password: "{{ snow_password }}"
+      instance: "{{ snow_instance }}"
+      state: present
+      table: u_chrissfvolrequest
+      number: "{{ snow_request }}"
+      data:
+        work_notes: "Started playbook - snow-sfcreate"
+    ignore_errors: yes
+    
   - name: Create Volume
     na_elementsw_volume:
       hostname: "{{ sfclustername }}"
@@ -28,5 +40,5 @@
       table: u_chrissfvolrequest
       number: "{{ snow_request }}"
       data:
-        work_notes: "Playbook completed"
+        work_notes: "Volume created. Completed playbook - snow-sfcreate"
     ignore_errors: yes
